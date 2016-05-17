@@ -8,5 +8,6 @@ get '/orders/new' do
 end
 
 get '/orders' do
-  @
+  @orders = Order.all()
+  erb(:index)
 end
