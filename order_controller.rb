@@ -4,6 +4,7 @@ require 'pry-byebug'
 require_relative './models/order.rb'
 
 get '/orders/new' do
+  binding.pry
   erb(:new)
 end
 
@@ -13,7 +14,6 @@ get '/orders' do
 end
 
 post '/orders' do
-
   @order = Order.new(params)
   @order.save
   erb(:create)
