@@ -11,3 +11,10 @@ get '/orders' do
   @orders = Order.all()
   erb(:index)
 end
+
+post '/orders' do
+
+  @order = Order.new(params)
+  @order.save
+  erb(:create)
+end

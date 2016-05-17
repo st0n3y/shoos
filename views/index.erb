@@ -1,0 +1,10 @@
+<h1>Shoe Orders</h1>
+
+<% @orders.each do |order| %>
+  <b>Name:</b>
+  <p><%= pizza.concat_name() %></p>
+
+  <b>Order:</b>
+  <p><%= order.quantity() %> x <%= order.size %></p>
+  <hr>
+<% end %>
