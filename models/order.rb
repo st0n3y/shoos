@@ -17,10 +17,10 @@ class Order
   end
 
   def save()
-    sql = "INSERT INTO orders(
-      first_name
-      last_name
-      quantity
+    sql = "INSERT INTO orders (
+      first_name,
+      last_name,
+      quantity,
       size
     )
     VALUES (
@@ -38,13 +38,13 @@ class Order
       result = orders.map { |order| Order.new( order ) }
       
       return result
-    end
+  end
 
-    def self.map_item( sql )
-      result = Order.map_items( sql )
+  def self.map_item( sql )
+    result = Order.map_items( sql )
       
-      return result.first
-    end
+    return result.first
+  end
 
   def self.all()
     sql = "SELECT * FROM orders;"

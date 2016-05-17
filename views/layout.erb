@@ -3,8 +3,20 @@
 <head>
   <title>Shoos Footwear</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+  body > div
+    {
+      width:200px;
+      height:100px;
+      background:#676470;
+      transition:all 0.3s ease;
+    }
+  </style>
 </head>
 <body>
+<h1 class="grow">shoos footwear</h1>
 <%= yield %>
+<p class="neon">They go on your feet and make you look good, maybe.</p>
 </body>
 </html>

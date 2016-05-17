@@ -2,7 +2,7 @@
 
 <% @orders.each do |order| %>
   <b>Name:</b>
-  <p><%= pizza.concat_name() %></p>
+  <p><%= order.concat_name() %></p>
 
   <b>Order:</b>
   <p><%= order.quantity() %> x <%= order.size() %></p>
