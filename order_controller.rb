@@ -4,7 +4,6 @@ require 'pry-byebug'
 require_relative './models/order.rb'
 
 get '/orders/new' do
-  binding.pry
   erb(:new)
 end
 

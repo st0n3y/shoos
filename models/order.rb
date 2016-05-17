@@ -1,4 +1,5 @@
 require 'pg'
+require_relative '../db/sql_runner.rb'
 
 class Order
 
@@ -15,7 +16,7 @@ class Order
     return @first_name + " " + @last_name
   end
 
-  def save
+  def save()
     sql = "INSERT INTO orders(
       first_name
       last_name
@@ -27,14 +28,26 @@ class Order
       '#{@last_name}',
       #{@quantity},
       #{@size}
-    )"
+    ) RETURNING *;"
 
-    SqlRunner.run(sql)
+    return Order.map_item( sql )
   end
 
+  def self.map_items( sql )
+      orders = SqlRunner.run( sql )
+      result = orders.map { |order| Order.new( order ) }
+      
+      return result
+    end
+
+    def self.map_item( sql )
+      result = Order.map_items( sql )
+      
+      return result.first
+    end
 
   def self.all()
-    sql = "SELECT FROM orders;"
+    sql = "SELECT * FROM orders;"
 
     orders = SqlRunner.run(sql)
     result = orders.map {|order| Order.new(order)}
