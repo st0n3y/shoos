@@ -1,5 +1,5 @@
 body {
-  background-color: #9595A1;
+  background-color: #6B58A8;
 }
 
 h1 {
@@ -31,9 +31,14 @@ h1 {
 }
 
 .neon {
+  font-size: 30px;
   text-align: center;
   color: #D0F8FF;
   text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
                0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
                0 0 40px #A5F1FF;
+}
+
+li {
+  
 }

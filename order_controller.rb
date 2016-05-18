@@ -7,7 +7,7 @@ get '/orders/new' do
   erb(:new)
 end
 
-get '/orders' do
+get '/index' do
   @orders = Order.all()
   erb(:index)
 end
